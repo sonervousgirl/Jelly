@@ -1,0 +1,129 @@
+<title>Quick Adopt Link</title>
+
+<!DOCTYPE html 
+      PUBLIC "-//W3C//DTD HTML 4.01//EN"
+      "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en-US">
+<head profile="http://www.w3.org/2005/10/profile">
+<link rel="icon" 
+      type="image/png" 
+      href="https://i.imgur.com/CF7ga59.png">
+</head>
+</html>
+
+<body>
+	<script type="application/javascript">
+  copyLink1 = "";
+  copyLink2 = "";
+  petname = "";
+
+  function petLinkGenerator(){
+    document.getElementById('clearer').removeAttribute("hidden");
+    document.getElementById('textCopy1').removeAttribute("hidden");
+    document.getElementById('textCopy2').removeAttribute("hidden");
+    petName = document.getElementById('petNameText').value;
+    copyLink1 = "https://neopetsclassic.com/adopt_pet/"+ petName
+    copyLink2 = "https://www.neopetsclassic.com/adopt_pet/"+ petName
+    document.getElementById("QAL").innerHTML = "\<a href =\"https://neopetsclassic.com/adopt_pet/"+ petName + "\"> https://neopetsclassic.com/adopt_pet/" + petName + "\<br\>" + "\<a href =\"https://www.neopetsclassic.com/adopt_pet/" + petName + "\"> https://www.neopetsclassic.com/adopt_pet/" + petName
+  }
+
+  function clearForm(){
+    petName = ""
+    document.getElementById("displayer").reset();
+    document.getElementById("clearer").setAttribute("hidden", "hidden");
+    document.getElementById("textCopy1").setAttribute("hidden", "hidden");
+    document.getElementById("textCopy2").setAttribute("hidden", "hidden");
+    document.getElementById("QAL").innerHTML = "\<a href =\"https://neopetsclassic.com/adopt_pet/"+ petName + "\"\> https://neopetsclassic.com/adopt_pet/" + petName + "\<br\>" + "\<a href =\"https://www.neopetsclassic.com/adopt_pet/\""+ petName + "\> https://www.neopetsclassic.com/adopt_pet/" + petName
+    //clear form
+    return true;
+  }
+  function copy(copyMe){
+    petLinkGenerator();
+    //clean up any html tags
+    copyMe=copyMe.replace(/<br>/gi, "\n");
+    copyMe=copyMe.replace(/<p.*>/gi, "\n");
+    copyMe=copyMe.replace(/<a.*href="(.*?)".*>(.*?)<\/a>/gi, " $2 (Link->$1) ");
+    copyMe=copyMe.replace(/<(?:.|\s)*?>/g, "");
+    //copy to clipboard
+    // Create new element
+    var el = document.createElement('textarea');
+    // Set value (string to be copied)
+    el.value = copyMe;
+    // Set non-editable to avoid focus and move outside of view
+    el.setAttribute('readonly', '');
+    el.style = {position: 'absolute', left: '-9999px'};
+    document.body.appendChild(el);
+    // Select text inside element
+    el.select();
+    // Copy text to clipboard
+    document.execCommand('copy');
+    // Remove temporary element
+    document.body.removeChild(el);
+    alert("The following text has been copied: \n \n" + copyMe);
+    return true;
+  }
+</script>
+<head><link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet"></head>
+	<script language="javascript" type="text/javascript" 
+  src="header.txt"></script>
+
+	<div style="float:right; width:69%;" id="rightc" class="bodyfont" style="posit
+	ion: relative;">
+			
+		<h2>Quick Adopt</h2>
+
+		<h1>Link Generator<br><font size="4">by Rodolfo</font></h1>
+
+<p><center><div class="box_shell" style="width:550px; padding-left: 120px">
+<div class="box_content"><table cellpadding="3" width="100%"><tr>
+
+<td width="50%" align="left">
+<form name='petLinkDisplayer' id="displayer" method='post'>
+
+
+<div id="asker">
+<div id="petName">
+<br>
+<label for="petNameText" id="petNamet">What is the name of the pet you want to adopt? <br><i><font size= 2>This is case sensitive</i> </font></label>
+<br><input type="text" id="petNameText" onkeyup='petLinkGenerator()' style="margin:5px;  width: 190px; font-family: 'Nunito', sans-serif;">
+</div>
+</div>
+<button type="button" hidden onclick="clearForm()" id="clearer" style="align: center; color: #ffffff; background-color: #8288E1; border-color: #5A5AE4; margin:5px; border-radius:10px; width: 190px; font-family: 'Nunito', sans-serif;">Clear</button>
+
+</div>
+</form>
+
+
+<b> Quick Adopt Links: </b>
+<div id=QAL> <a href="https://neopetsclassic.com/adopt_pet/">https://neopetsclassic.com/adopt_pet/</a><br><a href="https://neopetsclassic.com/adopt_pet/">https://neopetsclassic.com/adopt_pet/</a></p></div>
+<button type="button" hidden onclick="copy(copyLink1)" id="textCopy1" style="align: center; color: #ffffff; background-color: #8288E1; border-color: #5A5AE4; margin:5px; border-radius:10px; width: 190px; font-family: 'Nunito', sans-serif;">Copy Link 1</button>
+<button type="button" hidden onclick="copy(copyLink2)" id="textCopy2" style="align: center; color: #ffffff; background-color: #8288E1; border-color: #5A5AE4; margin:5px; border-radius:10px; width: 190px; font-family: 'Nunito', sans-serif;">Copy Link 2</button>
+<button type="button" hidden onclick="clearForm()" id="clearer" style="align: center; color: #ffffff; background-color: #8288E1; border-color: #5A5AE4; margin:5px; border-radius:10px; width: 190px; font-family: 'Nunito', sans-serif;">Clear</button>
+
+
+<div class="bodyfontr"><a href="guides.html#pound" target ="_blank"><font size="2">Pound Guide</a></font></div>
+</td>
+</tr></table></div>
+</div></center></p>
+
+		<hr><br>
+
+		<!--
+
+		<h1>TITLE<br>
+		<font size="4">DATE</font></h1>
+
+			<img src="http://images.neopets.com/pets/lutari_pink_baby.gif" align="right" height="130" ><br>
+
+				BODY
+
+			<div class="bodyfontr">-NAME</div>
+			<br><hr>
+
+		-->
+
+	</div>
+	
+<script language="javascript" type="text/javascript" 
+  src="footer.txt"></script>
+</body>

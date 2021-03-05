@@ -37,7 +37,59 @@
   else window.onload = JavaBlink;
 </SCRIPT>
 
+<script type="application/javascript">
+  copyLink1 = "";
+  copyLink2 = "";
+  petname = "";
 
+  function petLinkGenerator(){
+    document.getElementById('clearer').removeAttribute("hidden");
+    document.getElementById('textCopy1').removeAttribute("hidden");
+    document.getElementById('textCopy2').removeAttribute("hidden");
+    petName = document.getElementById('petNameText').value;
+    copyLink1 = "https://neopetsclassic.com/adopt_pet/"+ petName
+    copyLink2 = "https://www.neopetsclassic.com/adopt_pet/"+ petName
+    document.getElementById("QAL").innerHTML = "\<a href =\"https://neopetsclassic.com/adopt_pet/"+ petName + "\"> https://neopetsclassic.com/adopt_pet/" + petName + "\<br\>" + "\<a href =\"https://www.neopetsclassic.com/adopt_pet/" + petName + "\"> https://www.neopetsclassic.com/adopt_pet/" + petName
+  }
+
+  function clearForm(){
+    petName = ""
+    document.getElementById("displayer").reset();
+    document.getElementById("clearer").setAttribute("hidden", "hidden");
+    document.getElementById("textCopy1").setAttribute("hidden", "hidden");
+    document.getElementById("textCopy2").setAttribute("hidden", "hidden");
+    document.getElementById("QAL").innerHTML = "\<a href =\"https://neopetsclassic.com/adopt_pet/"+ petName + "\"\> https://neopetsclassic.com/adopt_pet/" + petName + "\<br\>" + "\<a href =\"https://www.neopetsclassic.com/adopt_pet/\""+ petName + "\> https://www.neopetsclassic.com/adopt_pet/" + petName
+    //clear form
+    return true;
+  }
+  function copy(copyMe){
+    petLinkGenerator();
+    //clean up any html tags
+    copyMe=copyMe.replace(/<br>/gi, "\n");
+    copyMe=copyMe.replace(/<p.*>/gi, "\n");
+    copyMe=copyMe.replace(/<a.*href="(.*?)".*>(.*?)<\/a>/gi, " $2 (Link->$1) ");
+    copyMe=copyMe.replace(/<(?:.|\s)*?>/g, "");
+    //copy to clipboard
+    // Create new element
+    var el = document.createElement('textarea');
+    // Set value (string to be copied)
+    el.value = copyMe;
+    // Set non-editable to avoid focus and move outside of view
+    el.setAttribute('readonly', '');
+    el.style = {position: 'absolute', left: '-9999px'};
+    document.body.appendChild(el);
+    // Select text inside element
+    el.select();
+    // Copy text to clipboard
+    document.execCommand('copy');
+    // Remove temporary element
+    document.body.removeChild(el);
+    alert("The following text has been copied: \n \n" + copyMe);
+    return true;
+  }
+</script>
+<head><link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet"></head>
+<body style = "font-family: 'Nunito', sans-serif;">
 
 <body>
 
@@ -205,19 +257,50 @@
 
 			<b>Pounding:</b><br>This one is the most straightforward.
 			To pound a pet navigate to the pound and click on the <i>Yellow Techo</i> sitting on the right. You will be taken to a page with a list of all of your pets (looking very upset).<br>Click 'Disown PetName?' beneath the pet you wish to leave at the pound.<br>It will cost 250 NPs.<br><br>Unlike on Retail Neopets, they will not ask multiple times if you are sure, they will just immediately be put into the pound, so make sure you click the right pet!<br>It is in the page coding though, so at some time in the future it may become functional.
-			<br><br><br>
-
+			<br><br>
 			<b>The Quick Adopt Link:</b><br>
-			Before we get into adopting and transfers I want to explain the Quick Adopt Link, or QAL, a bit.<br><br><center>
-			<i>The Quick Adopt Link:</i><br>
-			https://neopetsclassic.com/adopt_pet/Helena<br><br></center>
+			Before we get into adopting and transfers I want to explain the Quick Adopt Link, or QAL, a bit. To work the link you simply type the name of the pet into the box below, and click either link, or copy and paste the link into a new window. This can also be done manually by adding the pet name to the end of either of the two links. Both links basically work the same.<br><br>
+	
+<center><div class="box_title" style ="font-size: 16pt;"><b>Quick Adopt Link Generator</b></div><font size="2">by Rodolfo</font></center>
+<p><center><div class="box_shell" style="width:550px; padding-left: 120px">
+<div class="box_content"><table cellpadding="3" width="100%"><tr>
 
-			To work the link you simply paste it into your browser and change <i>Helena</i> to the name of the pet that you want to adopt. As long as you have the space and the Neopoints (and the pet is in the pound) they will instantly be adopted.<br>If you put the name of a pet that is owned it will tell you they are happy in their home, and if the pet doesn't exist you will get a 500 error. If you're adopting from another user or transferring a pet this is a good sign of if you spelled the name correctly.<br><br>
+<td width="50%" align="left">
+<form name='petLinkDisplayer' id="displayer" method='post'>
+
+
+<div id="asker">
+<div id="petName">
+<br>
+<label for="petNameText" id="petNamet">What is the name of the pet you want to adopt? <br><i><font size= 2>This is case sensitive</i> </font></label>
+<br><input type="text" id="petNameText" onkeyup='petLinkGenerator()' style="margin:5px;  width: 190px; font-family: 'Nunito', sans-serif;">
+</div>
+</div>
+<button type="button" hidden onclick="clearForm()" id="clearer" style="align: center; color: #ffffff; background-color: #8288E1; border-color: #5A5AE4; margin:5px; border-radius:10px; width: 190px; font-family: 'Nunito', sans-serif;">Clear</button>
+
+</div>
+</form>
+
+
+<b> Quick Adopt Links: </b>
+<div id=QAL> <a href="https://neopetsclassic.com/adopt_pet/">https://neopetsclassic.com/adopt_pet/</a><br><a href="https://neopetsclassic.com/adopt_pet/">https://neopetsclassic.com/adopt_pet/</a></p></div>
+<button type="button" hidden onclick="copy(copyLink1)" id="textCopy1" style="align: center; color: #ffffff; background-color: #8288E1; border-color: #5A5AE4; margin:5px; border-radius:10px; width: 190px; font-family: 'Nunito', sans-serif;">Copy Link 1</button>
+<button type="button" hidden onclick="copy(copyLink2)" id="textCopy2" style="align: center; color: #ffffff; background-color: #8288E1; border-color: #5A5AE4; margin:5px; border-radius:10px; width: 190px; font-family: 'Nunito', sans-serif;">Copy Link 2</button>
+<button type="button" hidden onclick="clearForm()" id="clearer" style="align: center; color: #ffffff; background-color: #8288E1; border-color: #5A5AE4; margin:5px; border-radius:10px; width: 190px; font-family: 'Nunito', sans-serif;">Clear</button>
+
+
+			<div class="bodyfontr"><a href="qal.html" target ="_blank"><font size="2">Pop-out Link</font></a></div><br>
+</td>
+</tr></table></div>
+</div></center></p>
+
+
+			As long as you have the space and the Neopoints (and the pet is in the pound) they will instantly be adopted.<br>If you put the name of a pet that is owned it will tell you they are happy in their home, and if the pet doesn't exist you will get a 500 error. If you're adopting from another user or transferring a pet this is a good sign of if you spelled the name correctly.<br><br>
 
 			If the QAL doesn't work for you try these troubleshooting tips:<br><br>
 				<li>The link is CaSe sEnSiTiVe! Make sure the name<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;is spelled and capitalized correctly.<br><br>
 				<li>Make sure there is <b>NO /</b> after the pet's name<br><br>
-				<li>Try typing www. before "neopetsclassic"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(this is the alternate link on the dailies page)<br><br>
+				<li>Try typing www. before "neopetsclassic"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(this is second link on the generator)<br><br>
 				<li>If the www. is already there, try removing it<br><br>
 				<li>Try another device <br><br><br>
 
