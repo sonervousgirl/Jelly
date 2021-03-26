@@ -18,9 +18,9 @@
     document.getElementById('textCopy1').removeAttribute("hidden");
     document.getElementById('textCopy2').removeAttribute("hidden");
     petName = document.getElementById('petNameText').value;
-    copyLink1 = "https://neopetsclassic.com/adopt_pet/"+ petName
-    copyLink2 = "https://www.neopetsclassic.com/adopt_pet/"+ petName
-    document.getElementById("QAL").innerHTML = "\<a href =\"https://neopetsclassic.com/adopt_pet/"+ petName + "\"> https://neopetsclassic.com/adopt_pet/" + petName + "\<br\>" + "\<a href =\"https://www.neopetsclassic.com/adopt_pet/" + petName + "\"> https://www.neopetsclassic.com/adopt_pet/" + petName
+    copyLink1 = "https://neopetsclassic.com/adopt_pet/?pet_name="+ petName
+    copyLink2 = "https://www.neopetsclassic.com/adopt_pet/?pet_name="+ petName
+    document.getElementById("QAL").innerHTML = "\<a href =\"https://neopetsclassic.com/adopt_pet/?pet_name="+ petName + "\"> https://neopetsclassic.com/adopt_pet/?pet_name=" + petName + "\<br\>" + "\<a href =\"https://www.neopetsclassic.com/adopt_pet/" + petName + "\"> https://www.neopetsclassic.com/adopt_pet/?pet_name=" + petName
   }
 
   function clearForm(){
@@ -29,7 +29,7 @@
     document.getElementById("clearer").setAttribute("hidden", "hidden");
     document.getElementById("textCopy1").setAttribute("hidden", "hidden");
     document.getElementById("textCopy2").setAttribute("hidden", "hidden");
-    document.getElementById("QAL").innerHTML = "\<a href =\"https://neopetsclassic.com/adopt_pet/"+ petName + "\"\> https://neopetsclassic.com/adopt_pet/" + petName + "\<br\>" + "\<a href =\"https://www.neopetsclassic.com/adopt_pet/\""+ petName + "\> https://www.neopetsclassic.com/adopt_pet/" + petName
+    document.getElementById("QAL").innerHTML = "\<a href =\"hhttps://neopetsclassic.com/adopt_pet/?pet_name="+ petName + "\"\>https://neopetsclassic.com/adopt_pet/?pet_name=" + petName + "\<br\>" + "\<a href =\"https://neopetsclassic.com/adopt_pet/?pet_name=\""+ petName + "\> https://neopetsclassic.com/adopt_pet/?pet_name=" + petName
     //clear form
     return true;
   }
@@ -191,8 +191,7 @@
 			
 			<div class="item">
 			    <a href="https://neopetsclassic.com/faerieland/hiddentower/" target ="_blank"><img src="http://images.neopets.com/events/fyora_faerieland.gif" width="100" height="100"/>
-			    <span class="caption">Hidden Tower<br></span><br></a>9am-8pm
-			</div>
+			    <span class="caption">Hidden Tower<br></span></a>Closed at<br>1am, 7am, 10pm			</div>
 					
 			<div class="item">
 			    <a href="https://neopetsclassic.com/userinfo/" target ="_blank"><img src="https://i.imgur.com/iQQ4eaM.gif" width="100" height="100"/>
@@ -229,7 +228,7 @@
 
 
 <b> Quick Adopt Links: </b>
-<div id=QAL> <a href="https://neopetsclassic.com/adopt_pet/">https://neopetsclassic.com/adopt_pet/</a><br><a href="https://neopetsclassic.com/adopt_pet/">https://neopetsclassic.com/adopt_pet/</a></p></div>
+<div id=QAL> <a href="https://neopetsclassic.com/adopt_pet/?pet_name=">https://neopetsclassic.com/adopt_pet/?pet_name=</a><br><a href="https://neopetsclassic.com/adopt_pet/?pet_name=">https://neopetsclassic.com/adopt_pet/?pet_name=</a></p></div>
 <button type="button" hidden onclick="copy(copyLink1)" id="textCopy1" style="align: center; color: #ffffff; background-color: #8288E1; border-color: #5A5AE4; margin:5px; border-radius:10px; width: 190px; font-family: 'Nunito', sans-serif;">Copy Link 1</button>
 <button type="button" hidden onclick="copy(copyLink2)" id="textCopy2" style="align: center; color: #ffffff; background-color: #8288E1; border-color: #5A5AE4; margin:5px; border-radius:10px; width: 190px; font-family: 'Nunito', sans-serif;">Copy Link 2</button>
 <button type="button" hidden onclick="clearForm()" id="clearer" style="align: center; color: #ffffff; background-color: #8288E1; border-color: #5A5AE4; margin:5px; border-radius:10px; width: 190px; font-family: 'Nunito', sans-serif;">Clear</button>
