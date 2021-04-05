@@ -1,13 +1,281 @@
+<head><link href="https://fonts.googleapis.com/css?family=Sacramento:400,700" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Economica:400,700" rel="stylesheet"><link  href="https://fonts.googleapis.com/css?family=Sacramento:500,600,700"  rel="stylesheet"><link  href="https://fonts.googleapis.com/css?family=Pacifico:500,600,700"  rel="stylesheet"><link  href="https://fonts.googleapis.com/css?family=Comfortaa:500,600,700" rel="stylesheet"><link  href="https://fonts.googleapis.com/css?family=Economica:500,600,700" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><div id="wrapper"><div style="float:none;width:1003;"id="navlinks" style="position: relative; z-index: -1;"><div id="nav"><center><table><tr><td><a href="index.html"style="background-color: #000000;">Home</a></td><td><a href="sounds.html"style="background-color: #000000;">Sounds</a></td><td><a href="newbie.html"style="background-color: #000000;">Newbies</a></td><td><a href="guides.html"style="background-color: #000000;">-more-</a></td><td><a href="gallery.html"style="background-color: #000000;">-coming-</a></td><td><a href="support.html"style="background-color: #000000;">-soon-</a></td><td><a href="faq.html"style="background-color: #000000;">-keep-</a></td><td><a href="http://www.neopetsclassic.com"style="background-color: #000000;">-watching-</a></td></tr></table></center></div></div><div style="float:none;width:100%;"id="gaph" style="position: relative; z-index: -1;"></div><div style="float:left;width:20%;" id="leftc" class="calfont" align="center" style="position: static;"><div style="margin-left: 3px; margin-right: 3px;" align="left"></font><h2>NPC 101</h2></div><br></div>
+<style>
+
+
+	body {
+
+
+
+		background: url("images/skeletons.png"); 
+		background-size: 400px
+				}
+
+		.bodyfont {
+			font: 12pt Comfortaa;
+			color: #000000;
+	        padding: 5px
+		}
+
+		.calfont {
+			font: 11pt Comfortaa;
+			color: #000000;
+	        padding: 5px
+		}
+
+		.bodyfontr {
+			font: 12pt Comfortaa;
+			color: #000000;
+			text-align: right;
+	        padding: 5px
+		}		
+
+		.footfontr {
+			font: 9pt Comfortaa;
+			color: #000000;
+			text-align: right;
+	        padding: 5px
+		}		
+
+		.lost {
+			font: 30pt Economica;
+			color: lime;
+			text-align: center;
+			background-color: #000000;
+		}
+
+		#leftc {
+			background: #fffffc;
+  			padding: 20px;
+  			border-radius: 40px;
+ 			box-shadow: 3px 3px 15px #ffb3ec;
+
+		}
+		
+		#rightc {
+			background: #fffffc;
+  			padding: 20px;
+ 			border-radius: 30px;
+ 			box-shadow: 3px 3px 15px #ffb3ec;
+ 			margin-bottom: 30px;
+		}
+
+		#guide {
+			overflow-y: scroll;
+  			overflow-x: hidden;
+  			height: 1000px;
+		}
+
+		#wrapper {
+	    	width: 802px;
+	    	margin: auto;
+		}
+
+		#leftc h1 {
+			font: 12pt Comfortaa;
+			color: #fffffc;
+			text-align: left;
+	        font-weight: bold;
+			padding-right: 5px;
+	        padding-bottom: 0px;
+			border: 11px solid #6779F4;
+	        background-color: #6779F4;
+			line-height: 0px;
+			margin-bottom: 7px;
+			margin-top: -9px;
+			margin-left: -8px;
+			margin-right: 74px;
+  			border-radius: 6px;
+		}
+
+		#leftc h2 {
+	        font-family: Pacifico, Sacramento, sans-serif;
+			color: #ffb3ec;
+			text-align: center;
+			font-size: 30px;
+			font-weight: bold;
+			margin-bottom: -40px;
+	        margin-top: 0px;
+		}
+
+		#rightc h1 {
+			background-color: #000000;
+			margin-bottom: 3px;
+			font: 25pt Comfortaa;
+			color: #ffb3ec;
+			margin-top: 0px;
+			text-align: left;
+			letter-spacing: 1px;
+			margin-left: -5px;
+			margin-right: -5px;
+			padding-left: 8px;
+	        padding-bottom: 5px;
+	        padding-top: 5px;
+			font-weight: bold;
+  			border-radius: 10px;        
+		}		
+
+		#rightc h2 {
+	        font-family: Pacifico, Sacramento, sans-serif;
+			color: #ffb3ec;
+			text-align: center;
+			font-size: 140px;
+			margin-bottom: -40px;
+	        margin-top: 0px;
+		}
+
+		#rightc h3 {
+			font: 12pt Comfortaa;
+			color: #fffffc;
+			text-align: left;
+	        font-weight: bold;
+			padding-right: 5px;
+	        padding-bottom: 0px;
+			border: 11px solid #6779F4;
+	        background-color: #6779F4;
+			line-height: 0px;
+			margin-bottom: 7px;
+			margin-top: -9px;
+			margin-left: 55px;
+			margin-right: 74px;
+  			border-radius: 6px;
+		}
+
+		#nav a:link, #nav a:visited {
+			width:121px;
+			height:33px;
+			display:block;
+			font-family:Comfortaa;
+			font-size: 23;
+			color:#F9EAE3;
+			text-shadow: 2px 2px 3px #ffb3ec;
+			text-decoration:none;
+			text-align:center;
+			vertical-align: middle;
+			padding-top: 5px;	
+  			border-radius: 30px;
+  			box-shadow: 3px 3px 15px #ffb3ec;
+		}
+
+		#nav a:hover {
+			background: url("images/hoverlink.png");
+			color:#ffb3ec;
+		}
+
+		#nav {
+			background-color: transparent;
+	        display:block;
+	        text-align:center;
+	        height: 43px;
+			width: 1000;
+			margin-left: 1px;
+		}
+
+		#banner {
+			height: 150px;
+	        margin: auto;
+			width: 1000px;
+			top: -12px;
+		}
+
+		#navlinks {
+			height: 43px;
+	        margin: auto;
+			width: 1000px;
+			top: 8px;
+		}
+
+		#gaph {
+			height: 30px;
+	        margin: auto;
+			width: 1000px;
+		}
+
+
+		b {
+			color: #EFC57C;
+			font-weight: bold;
+		}
+
+		u {
+			color: #A7557C;
+			font-weight: bold;
+		}
+
+		i {
+			color: #5A5AE4;
+			font-weight: bold;
+			font-style: italic;
+		}
+
+		a:link, a:visited {
+			color: #6779F4;
+			font-weight: bold;
+			transform: underline;
+		}	
+
+		a:hover {
+			color: #5A5AE4;
+			font-weight: bold;
+			transform: underline;
+		}
+
+		table {
+			background: none;
+		}
+
+		table a img, center p {
+			height: 0px;
+			width: 0px;
+			overflow: hidden;
+		}
+
+		hr {
+		    height: 1px;
+			border-width: 0px;
+			color:gray;
+			background-color:gray;
+			width:90%
+		}
+
+		div.item {
+    		vertical-align: top;
+		    display: inline-block;
+		    text-align: center;
+		    width: 100px;
+		    padding: 25px;
+		    padding-top: 10px;
+		}
+
+		.caption {
+		    display: block;
+		    padding-top: 5px;
+		}
+
+		::-webkit-scrollbar {
+			width: 15px;
+		}
+
+		::-webkit-scrollbar-track {
+			background: #344484;
+		}
+
+		::-webkit-scrollbar-thumb {
+			background: #ECB579;
+		}
+
+		::-webkit-scrollbar-thumb:hover {
+		 	background: #E29376;
+		}
+
+</style>
 <title>Newbie Guide</title>
 
-<!DOCTYPE html 
-      PUBLIC "-//W3C//DTD HTML 4.01//EN"
-      "http://www.w3.org/TR/html4/strict.dtd">
+
 <html lang="en-US">
-<head profile="http://www.w3.org/2005/10/profile">
-<link rel="icon" 
+<head>
+	<link rel="icon" 
       type="image/png" 
-      href="https://i.imgur.com/CF7ga59.png">
+      href="https://i.imgur.com/R45gGIH.png">
 </head>
 </html>
 
@@ -17,8 +285,9 @@
 
 	<div style="float:right; width:69%;" id="rightc" class="bodyfont" style="posit
 	ion: relative;">
-			
-		<h2>NPC 101</h2>
+
+
+<body>
 
 		<h1>Newbie Gude <font size="4"><br>By Mousekat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			4/3/2021</font></h1>
@@ -78,10 +347,29 @@
 			<br><tr></tr>
 			<hr>
 
-		
+
+	
+
+
+
+
+		<!--
+
+		<h1>TITLE<br>
+		<font size="4">DATE</font></h1>
+
+			<img src="http://images.neopets.com/pets/lutari_pink_baby.gif" align="right" height="130" ><br>
+
+				BODY
+
+			<div class="bodyfontr">-NAME</div>
+			<br><hr>
+
+		-->
 
 	</div>
 	
 <script language="javascript" type="text/javascript" 
   src="footer.txt"></script>
 </body>
+
